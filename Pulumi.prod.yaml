@@ -1,0 +1,5 @@
+config:
+  digitalocean:token:
+    secure: AAABAECUi8UUnL6q/pMim9H4QjDlotpXxEYYO7LZSmnf6Z1caJZnQ2o5NdHJxkaadeJVJnYvjyecxV+y8oLx9aobn4YMBkZ4siHYKQ+MW0iNB8KJB58b2rafvP/G91bxZ1GilWqCfw==
+  infrastructure:minNodeCount: "1"
+  infrastructure:maxNodeCount: "3"

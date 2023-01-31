@@ -2,3 +2,12 @@ name: infrastructure
 runtime: nodejs
 options:
   refresh: always
+config:
+  digitalocean:token:
+    value: digitalocean:token
+template:
+  config:
+    minNodeCount:
+      default: 1
+    maxNodeCount:
+      default: 1
