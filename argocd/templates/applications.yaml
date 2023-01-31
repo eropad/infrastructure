@@ -1,0 +1,22 @@
+{{ range $environment := .Values.environments }}
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: {{ $environment }}
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/eropad/gitops.git
+    targetRevision: HEAD
+    path: environments/{{ $environment }}
+  destination:
+    server: https://kubernetes.default.svc
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+      allowEmpty: true
+---
+{{ end }}

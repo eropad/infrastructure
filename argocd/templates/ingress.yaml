@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: argocd-server-ingress
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    nginx.ingress.kubernetes.io/backend-protocol: HTTPS
+    external-dns.alpha.kubernetes.io/ingress-hostname-source: defined-hosts-only
+    kubernetes.io/ingress.class: nginx
+spec:
+  tls:
+    - hosts:
+        - devops.lovelustpassion.live
+      secretName: argocd-secret
+  rules:
+    - host: devops.lovelustpassion.live
+      http:
+        paths:
+          - pathType: ImplementationSpecific
+            backend:
+              service:
+                name: argocd-server
+                port:
+                  number: 443

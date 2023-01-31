@@ -30,19 +30,32 @@ const kubeconfig = cluster.status.apply(status => {
 });
 
 const provider = new kubernetes.Provider('do-k8s', {kubeconfig});
-const appLabels = {app: 'app-nginx'};
+const app = 'argocd';
 
-Reflect.construct(kubernetes.apps.v1.Deployment, ['do-app-dep', {
-	spec: {
-		selector: {matchLabels: appLabels},
-		template: {
-			metadata: {labels: appLabels},
-			spec: {
-				containers: [{
-					name: 'nginx',
-					image: 'nginx',
-				}],
-			},
-		},
+const chartNamespace = new kubernetes.core.v1.Namespace(
+	app,
+	{
+		metadata: {name: app},
 	},
-}, {provider}]);
+	{
+		provider,
+	},
+);
+
+const chartValues = {
+	githubUsername: config.getSecret('githubUsername') ?? 'githubUsername',
+	githubPassword: config.getSecret('githubPassword') ?? 'githubPassword',
+	argocdAdminPasswordBcryptHash: config.getSecret('argocdAdminPasswordBcryptHash') ?? 'argocdAdminPasswordBcryptHash',
+};
+
+Reflect.construct(kubernetes.helm.v3.Chart, [
+	app,
+	{
+		namespace: chartNamespace.metadata.name,
+		path: app,
+		values: chartValues,
+	},
+	{
+		provider,
+	},
+]);

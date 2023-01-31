@@ -1,5 +1,10 @@
 config:
   digitalocean:token:
     secure: AAABAIQCOZSf//yuCe/k1TD4MHxgPOsW5Z5j7FaAhsmzL0AwE6+mxUUr40HHQBDvUDjZxCn1eKKhttUmAg6iDFSXNZggZxQDchpUe1LS7Zj1P7eljYL4XD++GMIr25okQx1LrICT7Q==
-  infrastructure:minNodeCount: "1"
+  infrastructure:argocdAdminPasswordBcryptHash:
+    secure: AAABAKYDHos/YShPItszDaJGaagIiQ20cenSgqkgvLUl9JywvHXHA5lt7JX1WhJApSKGjg8KF0bv9ySmqMLJwmGC/fKPRffXc6uS2CJLQ4DYvbU7ldSN1ti56y8=
+  infrastructure:githubPassword:
+    secure: AAABAH4ohOPrdxMlZSPGZBKtlExadY36J2kGlAXXy8Tn0uW80oTFBhHBjmRiB/UheKUQ5uPsmWun967uTjVEGTVUTTSFpq0v
+  infrastructure:githubUsername: alias-rahil
   infrastructure:maxNodeCount: "1"
+  infrastructure:minNodeCount: "1"

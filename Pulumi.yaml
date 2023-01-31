@@ -11,3 +11,9 @@ template:
       default: 1
     maxNodeCount:
       default: 1
+    argocdAdminPasswordBcryptHash:
+      default: argocdAdminPasswordBcryptHash
+    githubUsername:
+      default: githubUsername
+    githubPassword:
+      default: githubPassword
