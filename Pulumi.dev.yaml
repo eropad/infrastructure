@@ -2,7 +2,7 @@ config:
   digitalocean:token:
     secure: AAABAIQCOZSf//yuCe/k1TD4MHxgPOsW5Z5j7FaAhsmzL0AwE6+mxUUr40HHQBDvUDjZxCn1eKKhttUmAg6iDFSXNZggZxQDchpUe1LS7Zj1P7eljYL4XD++GMIr25okQx1LrICT7Q==
   infrastructure:argocdAdminPasswordBcryptHash:
-    secure: AAABAKYDHos/YShPItszDaJGaagIiQ20cenSgqkgvLUl9JywvHXHA5lt7JX1WhJApSKGjg8KF0bv9ySmqMLJwmGC/fKPRffXc6uS2CJLQ4DYvbU7ldSN1ti56y8=
+    secure: AAABAPRBb1RCOiCxB+VTKpn1E07ig4hrS6YsDBdQvrcE5yXGakl8lropRXAmCPhC3u1PT119OVdSIIo7oqPtxJzTwEWkDifeK6T3Bg3+M1iBFc0AOeDp3rl2Gsw=
   infrastructure:githubPassword:
     secure: AAABAH4ohOPrdxMlZSPGZBKtlExadY36J2kGlAXXy8Tn0uW80oTFBhHBjmRiB/UheKUQ5uPsmWun967uTjVEGTVUTTSFpq0v
   infrastructure:githubUsername: alias-rahil
