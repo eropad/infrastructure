@@ -4,7 +4,7 @@ import * as pulumi from '@pulumi/pulumi';
 
 const config = new pulumi.Config();
 const minNodeCount = config.getNumber('minNodeCount') ?? 1;
-const maxNodeCount = config.getNumber('minNodeCount') ?? 1;
+const maxNodeCount = config.getNumber('maxNodeCount') ?? 3;
 
 const cluster = new digitalocean.KubernetesCluster('do-cluster', {
 	region: digitalocean.Region.BLR1,
