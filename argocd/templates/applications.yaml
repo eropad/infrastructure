@@ -17,6 +17,7 @@ spec:
           value: {{ $.Values.repoUrl }}
   destination:
     server: https://kubernetes.default.svc
+    namespace: {{ $.Release.Namespace }}
   syncPolicy:
     automated:
       prune: true
