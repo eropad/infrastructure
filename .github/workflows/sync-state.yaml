@@ -15,4 +15,4 @@ jobs:
       - if: ${{ github.ref_name }} === "main"
         run: npm run dev
       - if: ${{ github.ref_name }} === "release"
-        run: npm run prod
+        run: npm run start
