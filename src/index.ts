@@ -2,6 +2,7 @@ import * as digitalocean from '@pulumi/digitalocean';
 import * as kubernetes from '@pulumi/kubernetes';
 import * as pulumi from '@pulumi/pulumi';
 
+const doConfig = new pulumi.Config('digitalocean');
 const config = new pulumi.Config();
 const minNodeCount = config.getNumber('minNodeCount') ?? 1;
 const maxNodeCount = config.getNumber('maxNodeCount') ?? 3;
@@ -46,6 +47,7 @@ const chartValues = {
 	githubUsername: config.getSecret('githubUsername') ?? 'githubUsername',
 	githubPassword: config.getSecret('githubPassword') ?? 'githubPassword',
 	argocdAdminPasswordBcryptHash: config.getSecret('argocdAdminPasswordBcryptHash') ?? 'argocdAdminPasswordBcryptHash',
+	doCreds: doConfig.getSecret('token') ?? 'digitalocean:token',
 };
 
 Reflect.construct(kubernetes.helm.v3.Chart, [

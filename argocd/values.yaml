@@ -9,3 +9,4 @@ host: devops.lovelustpassion.live
 githubUsername: githubUsername
 githubPassword: githubPassword
 argocdAdminPasswordBcryptHash: argocdAdminPasswordBcryptHash
+doCreds: doCreds

@@ -1,0 +1,7 @@
+apiVersion: v1
+stringData:
+  digitalocean_api_token: {{ $.Values.doCreds }}
+kind: Secret
+metadata:
+  name: do-creds
+  namespace: external-dns
