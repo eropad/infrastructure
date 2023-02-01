@@ -5,6 +5,7 @@ options:
 config:
   digitalocean:token:
     value: digitalocean:token
+    secret: true
 template:
   config:
     minNodeCount:
@@ -13,7 +14,9 @@ template:
       default: 3
     argocdAdminPasswordBcryptHash:
       default: argocdAdminPasswordBcryptHash
+      secret: true
     githubUsername:
       default: githubUsername
     githubPassword:
       default: githubPassword
+      secret: true

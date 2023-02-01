@@ -6,6 +6,6 @@ environments:
   - prod
 repoUrl: https://github.com/eropad/gitops.git
 host: devops.lovelustpassion.live
-githubUsername:
-githubPassword:
-argocdAdminPasswordBcryptHash:
+githubUsername: githubUsername
+githubPassword: githubPassword
+argocdAdminPasswordBcryptHash: argocdAdminPasswordBcryptHash

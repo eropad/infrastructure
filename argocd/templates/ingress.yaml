@@ -10,10 +10,10 @@ metadata:
 spec:
   tls:
     - hosts:
-        - {{ .Values.host }}
+        - {{ $.Values.host }}
       secretName: argocd-secret
   rules:
-    - host: {{ .Values.host }}
+    - host: {{ $.Values.host }}
       http:
         paths:
           - pathType: ImplementationSpecific
