@@ -2,7 +2,10 @@ argo-cd:
   configs:
     secret:
       createSecret: false
-environments: []
+environments:
+  - prod
+repoUrl: https://github.com/eropad/gitops.git
+host: devops.lovelustpassion.live
 githubUsername:
 githubPassword:
 argocdAdminPasswordBcryptHash:

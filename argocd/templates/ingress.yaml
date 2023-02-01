@@ -10,10 +10,10 @@ metadata:
 spec:
   tls:
     - hosts:
-        - devops.lovelustpassion.live
+        - {{ .Values.host }}
       secretName: argocd-secret
   rules:
-    - host: devops.lovelustpassion.live
+    - host: {{ .Values.host }}
       http:
         paths:
           - pathType: ImplementationSpecific
