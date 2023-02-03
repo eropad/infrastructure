@@ -2,6 +2,8 @@ argo-cd:
   configs:
     secret:
       createSecret: false
+    cm:
+      create: false
 environments:
   - prod
 repoUrl: https://github.com/eropad/gitops.git
