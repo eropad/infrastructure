@@ -5,7 +5,7 @@ argo-cd:
 environments:
   - prod
 repoUrl: https://github.com/eropad/gitops.git
-host: argo-cd.lovelustpassion.live
+domain: lovelustpassion.live
 githubUsername: githubUsername
 githubPassword: githubPassword
 argocdAdminPasswordBcryptHash: argocdAdminPasswordBcryptHash
