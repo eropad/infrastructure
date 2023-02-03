@@ -3,7 +3,6 @@ import * as digitalocean from '@pulumi/digitalocean';
 import * as kubernetes from '@pulumi/kubernetes';
 import * as pulumi from '@pulumi/pulumi';
 
-const doConfig = new pulumi.Config('digitalocean');
 const config = new pulumi.Config();
 const minNodeCount = config.getNumber('minNodeCount') ?? 1;
 const maxNodeCount = config.getNumber('maxNodeCount') ?? 3;
@@ -43,11 +42,17 @@ const chartNamespace = new kubernetes.core.v1.Namespace(
 	},
 );
 
+const doConfig = new pulumi.Config('digitalocean');
+const doCreds = doConfig.getSecret('token') ?? 'digitalocean:token';
+const githubUsername = config.getSecret('githubUsername') ?? 'githubUsername';
+const githubPassword = config.getSecret('githubPassword') ?? 'githubPassword';
+const argocdAdminPasswordBcryptHash = config.getSecret('argocdAdminPasswordBcryptHash') ?? 'argocdAdminPasswordBcryptHash';
+
 const chartValues = {
-	githubUsername: config.getSecret('githubUsername') ?? 'githubUsername',
-	githubPassword: config.getSecret('githubPassword') ?? 'githubPassword',
-	argocdAdminPasswordBcryptHash: config.getSecret('argocdAdminPasswordBcryptHash') ?? 'argocdAdminPasswordBcryptHash',
-	doCreds: doConfig.getSecret('token') ?? 'digitalocean:token',
+	githubUsername,
+	githubPassword,
+	argocdAdminPasswordBcryptHash,
+	doCreds,
 };
 
 Reflect.construct(kubernetes.helm.v3.Chart, [
@@ -62,3 +67,24 @@ Reflect.construct(kubernetes.helm.v3.Chart, [
 		provider,
 	},
 ]);
+
+type Secret = {
+	metadata: {
+		name: string;
+	};
+	data?: Record<string, string | pulumi.Output<string>>;
+	stringData?: Record<string, string | pulumi.Output<string>>;
+};
+
+Reflect.construct(kubernetes.yaml.ConfigGroup, ['do-db-operator', {
+	files: 'https://raw.githubusercontent.com/digitalocean/do-operator/main/releases/do-operator-v0.1.6.yaml',
+	transformations: [((secret: Secret) => {
+		if (secret.metadata.name === 'do-operator-do-api-token') {
+			delete secret.data;
+			secret.stringData = {'access-token': doCreds};
+			return secret;
+		}
+
+		return secret;
+	})],
+}]);
