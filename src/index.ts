@@ -77,7 +77,7 @@ type Secret = {
 };
 
 Reflect.construct(kubernetes.yaml.ConfigGroup, ['do-db-operator', {
-	files: 'https://raw.githubusercontent.com/digitalocean/do-operator/main/releases/do-operator-v0.1.6.yaml',
+	files: 'https://raw.githubusercontent.com/digitalocean/do-operator/main/releases/do-operator-v0.1.5.yaml',
 	transformations: [((secret: Secret) => {
 		if (secret.metadata.name === 'do-operator-do-api-token') {
 			delete secret.data;
@@ -87,4 +87,6 @@ Reflect.construct(kubernetes.yaml.ConfigGroup, ['do-db-operator', {
 
 		return secret;
 	})],
+}, {
+	provider,
 }]);
