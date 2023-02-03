@@ -6,5 +6,7 @@ config:
   infrastructure:githubPassword:
     secure: AAABAH4ohOPrdxMlZSPGZBKtlExadY36J2kGlAXXy8Tn0uW80oTFBhHBjmRiB/UheKUQ5uPsmWun967uTjVEGTVUTTSFpq0v
   infrastructure:githubUsername: alias-rahil
-  infrastructure:maxNodeCount: "3"
+  infrastructure:maxNodeCount: "5"
   infrastructure:minNodeCount: "1"
+  infrastructure:domain: lovelustpassion.live
+  infrastructure:repoUrl: https://github.com/eropad/gitops.git

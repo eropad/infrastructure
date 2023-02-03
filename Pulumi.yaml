@@ -11,7 +11,7 @@ template:
     minNodeCount:
       default: 1
     maxNodeCount:
-      default: 3
+      default: 5
     argocdAdminPasswordBcryptHash:
       default: argocdAdminPasswordBcryptHash
       secret: true
@@ -20,3 +20,7 @@ template:
     githubPassword:
       default: githubPassword
       secret: true
+    domain:
+      default: domain
+    repoUrl:
+      default: repoUrl

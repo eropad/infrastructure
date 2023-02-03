@@ -1,8 +1,7 @@
-{{ range $environment := $.Values.environments }}
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: {{ $environment }}
+  name: bootstrap-cluster
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
@@ -10,11 +9,13 @@ spec:
   source:
     repoURL: {{ $.Values.repoUrl }}
     targetRevision: HEAD
-    path: environments/{{ $environment }}
+    path: bootstrap-cluster
     helm:
       parameters:
         - name: repoUrl
           value: {{ $.Values.repoUrl }}
+        - name: domain
+          value: {{ $.Values.domain }}
   destination:
     server: https://kubernetes.default.svc
     namespace: {{ $.Release.Namespace }}
@@ -23,5 +24,3 @@ spec:
       prune: true
       selfHeal: true
       allowEmpty: true
----
-{{ end }}

@@ -5,7 +5,7 @@ import * as pulumi from '@pulumi/pulumi';
 
 const config = new pulumi.Config();
 const minNodeCount = config.getNumber('minNodeCount') ?? 1;
-const maxNodeCount = config.getNumber('maxNodeCount') ?? 3;
+const maxNodeCount = config.getNumber('maxNodeCount') ?? 5;
 
 const cluster = new digitalocean.KubernetesCluster('do-cluster', {
 	region: digitalocean.Region.BLR1,
@@ -47,12 +47,16 @@ const doCreds = doConfig.getSecret('token') ?? 'digitalocean:token';
 const githubUsername = config.getSecret('githubUsername') ?? 'githubUsername';
 const githubPassword = config.getSecret('githubPassword') ?? 'githubPassword';
 const argocdAdminPasswordBcryptHash = config.getSecret('argocdAdminPasswordBcryptHash') ?? 'argocdAdminPasswordBcryptHash';
+const domain = config.getSecret('domain') ?? 'domain';
+const repoUrl = config.getSecret('repoUrl') ?? 'repoUrl';
 
 const chartValues = {
 	githubUsername,
 	githubPassword,
 	argocdAdminPasswordBcryptHash,
 	doCreds,
+	domain,
+	repoUrl,
 };
 
 Reflect.construct(kubernetes.helm.v3.Chart, [
