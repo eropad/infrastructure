@@ -10,8 +10,7 @@ const maxNodeCount = config.getNumber('maxNodeCount') ?? 3;
 
 const cluster = new digitalocean.KubernetesCluster('do-cluster', {
 	region: digitalocean.Region.BLR1,
-	// eslint-disable-next-line unicorn/prefer-top-level-await
-	version: digitalocean.getKubernetesVersions().then(p => p.latestVersion),
+	version: '1.25.4-do.0',
 	nodePool: {
 		name: 'default',
 		size: digitalocean.DropletSlug.DropletS1VCPU2GB,
