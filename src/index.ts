@@ -49,6 +49,7 @@ const githubPassword = config.getSecret('githubPassword') ?? 'githubPassword';
 const argocdAdminPasswordBcryptHash = config.getSecret('argocdAdminPasswordBcryptHash') ?? 'argocdAdminPasswordBcryptHash';
 const domain = config.getSecret('domain') ?? 'domain';
 const repoUrl = config.getSecret('repoUrl') ?? 'repoUrl';
+const mailgunAuthPass = config.getSecret('mailgunAuthPass') ?? 'mailgunAuthPass';
 
 const chartValues = {
 	githubUsername,
@@ -57,6 +58,7 @@ const chartValues = {
 	doCreds,
 	domain,
 	repoUrl,
+	mailgunAuthPass,
 };
 
 Reflect.construct(kubernetes.helm.v3.Chart, [

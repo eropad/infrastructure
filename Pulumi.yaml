@@ -24,3 +24,5 @@ template:
       default: domain
     repoUrl:
       default: repoUrl
+    mailgunAuthPass:
+      default: mailgunAuthPass
