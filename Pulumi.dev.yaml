@@ -18,3 +18,4 @@ config:
   infrastructure:maxNodeCount: "5"
   infrastructure:minNodeCount: "1"
   infrastructure:repoUrl: https://github.com/eropad/gitops.git
+  infrastructure:s3Endpoint: nyc3.digitaloceanspaces.com

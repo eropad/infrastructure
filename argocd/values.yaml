@@ -12,3 +12,4 @@ mailgunAuthPass: mailgunAuthPass
 doAccessKeyId: doAccessKeyId
 doSecretAccessKey: doSecretAccessKey
 doBucket: doBucket
+s3Endpoint: s3Endpoint

@@ -35,3 +35,5 @@ template:
       secret: true
     doBucket:
       default: doBucket
+    s3Endpoint:
+      default: s3Endpoint

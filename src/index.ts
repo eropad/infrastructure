@@ -53,6 +53,7 @@ const mailgunAuthPass = config.getSecret('mailgunAuthPass') ?? 'mailgunAuthPass'
 const doAccessKeyId = config.getSecret('doAccessKeyId') ?? 'doAccessKeyId';
 const doSecretAccessKey = config.getSecret('doSecretAccessKey') ?? 'doSecretAccessKey';
 const doBucket = config.getSecret('doBucket') ?? 'doBucket';
+const s3Endpoint = config.getSecret('s3Endpoint') ?? 's3Endpoint';
 
 const chartValues = {
 	githubUsername,
@@ -65,6 +66,7 @@ const chartValues = {
 	doAccessKeyId,
 	doSecretAccessKey,
 	doBucket,
+	s3Endpoint,
 };
 
 Reflect.construct(kubernetes.helm.v3.Chart, [
