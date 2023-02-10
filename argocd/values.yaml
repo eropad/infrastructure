@@ -9,3 +9,6 @@ githubPassword: githubPassword
 argocdAdminPasswordBcryptHash: argocdAdminPasswordBcryptHash
 doCreds: doCreds
 mailgunAuthPass: mailgunAuthPass
+doAccessKeyId: doAccessKeyId
+doSecretAccessKey: doSecretAccessKey
+doBucket: doBucket

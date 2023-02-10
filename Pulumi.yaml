@@ -17,6 +17,7 @@ template:
       secret: true
     githubUsername:
       default: githubUsername
+      secret: true
     githubPassword:
       default: githubPassword
       secret: true
@@ -26,3 +27,11 @@ template:
       default: repoUrl
     mailgunAuthPass:
       default: mailgunAuthPass
+    doAccessKeyId:
+      default: doAccessKeyId
+      secret: true
+    doSecretAccessKey:
+      default: doSecretAccessKey
+      secret: true
+    doBucket:
+      default: doBucket

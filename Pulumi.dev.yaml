@@ -3,10 +3,16 @@ config:
     secure: AAABAIQCOZSf//yuCe/k1TD4MHxgPOsW5Z5j7FaAhsmzL0AwE6+mxUUr40HHQBDvUDjZxCn1eKKhttUmAg6iDFSXNZggZxQDchpUe1LS7Zj1P7eljYL4XD++GMIr25okQx1LrICT7Q==
   infrastructure:argocdAdminPasswordBcryptHash:
     secure: AAABAPRBb1RCOiCxB+VTKpn1E07ig4hrS6YsDBdQvrcE5yXGakl8lropRXAmCPhC3u1PT119OVdSIIo7oqPtxJzTwEWkDifeK6T3Bg3+M1iBFc0AOeDp3rl2Gsw=
+  infrastructure:doAccessKeyId:
+    secure: AAABAAGXfYE8VjJ9qtBlHxTm9cORN1zb/hXtIDUCF92VQ9bOF+XjnaeJJqO8bwUECwzcmg==
+  infrastructure:doBucket: eropad
+  infrastructure:doSecretAccessKey:
+    secure: AAABAHfFq1Em4tC4GhElnXu3TXuG/LIk6vrVq8Poe/M7YKxS914MoWz+S4SctUD/Tfetd1bPKFGnidpZOnxdViYiVvVeS4WReKaU
   infrastructure:domain: lovelustpassion.live
   infrastructure:githubPassword:
     secure: AAABAH4ohOPrdxMlZSPGZBKtlExadY36J2kGlAXXy8Tn0uW80oTFBhHBjmRiB/UheKUQ5uPsmWun967uTjVEGTVUTTSFpq0v
-  infrastructure:githubUsername: alias-rahil
+  infrastructure:githubUsername:
+    secure: AAABAIfZN2mX1YoMyuINJz+1X4uspmzskFtsz+JRSC+MG2lqFve+0DrxyQ==
   infrastructure:mailgunAuthPass:
     secure: AAABAGp+KKz/9ytqk6BQPejyx4jjzU2ACN6knoIdXwatKjItFBrXfAP3QMNNP/SkdWMK9/Wo9GukZmx2VWYZC9dz0qzv5hgRqpOaUAwCBb2FoA==
   infrastructure:maxNodeCount: "5"

@@ -50,6 +50,9 @@ const argocdAdminPasswordBcryptHash = config.getSecret('argocdAdminPasswordBcryp
 const domain = config.getSecret('domain') ?? 'domain';
 const repoUrl = config.getSecret('repoUrl') ?? 'repoUrl';
 const mailgunAuthPass = config.getSecret('mailgunAuthPass') ?? 'mailgunAuthPass';
+const doAccessKeyId = config.getSecret('doAccessKeyId') ?? 'doAccessKeyId';
+const doSecretAccessKey = config.getSecret('doSecretAccessKey') ?? 'doSecretAccessKey';
+const doBucket = config.getSecret('doBucket') ?? 'doBucket';
 
 const chartValues = {
 	githubUsername,
@@ -59,6 +62,9 @@ const chartValues = {
 	domain,
 	repoUrl,
 	mailgunAuthPass,
+	doAccessKeyId,
+	doSecretAccessKey,
+	doBucket,
 };
 
 Reflect.construct(kubernetes.helm.v3.Chart, [
