@@ -5,7 +5,7 @@ config:
     secure: AAABAPRBb1RCOiCxB+VTKpn1E07ig4hrS6YsDBdQvrcE5yXGakl8lropRXAmCPhC3u1PT119OVdSIIo7oqPtxJzTwEWkDifeK6T3Bg3+M1iBFc0AOeDp3rl2Gsw=
   infrastructure:doAccessKeyId:
     secure: AAABAAGXfYE8VjJ9qtBlHxTm9cORN1zb/hXtIDUCF92VQ9bOF+XjnaeJJqO8bwUECwzcmg==
-  infrastructure:doBucket: eropad
+  infrastructure:doBucket: eropad-lovelustpassion
   infrastructure:doSecretAccessKey:
     secure: AAABAHfFq1Em4tC4GhElnXu3TXuG/LIk6vrVq8Poe/M7YKxS914MoWz+S4SctUD/Tfetd1bPKFGnidpZOnxdViYiVvVeS4WReKaU
   infrastructure:domain: lovelustpassion.live
