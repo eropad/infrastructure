@@ -6,9 +6,10 @@ import * as pulumi from '@pulumi/pulumi';
 const config = new pulumi.Config();
 const minNodeCount = config.getNumber('minNodeCount') ?? 1;
 const maxNodeCount = config.getNumber('maxNodeCount') ?? 5;
+const region = config.getSecret('region') ?? 'region';
 
 const cluster = new digitalocean.KubernetesCluster('do-cluster', {
-	region: digitalocean.Region.BLR1,
+	region,
 	version: '1.25.4-do.0',
 	nodePool: {
 		name: 'default',
@@ -67,6 +68,7 @@ const chartValues = {
 	doSecretAccessKey,
 	doBucket,
 	s3Endpoint,
+	region,
 };
 
 Reflect.construct(kubernetes.helm.v3.Chart, [
