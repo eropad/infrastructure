@@ -73,7 +73,7 @@ Reflect.construct(kubernetes.helm.v3.Chart, [
 	app,
 	{
 		namespace: chartNamespace.metadata.name,
-		path: `../${app}`,
+		path: app,
 		values: chartValues,
 	},
 	{
