@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: argocd-server-ingress
+  name: argocd-server
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-prod
     nginx.ingress.kubernetes.io/backend-protocol: HTTPS
@@ -10,7 +10,7 @@ spec:
   tls:
     - hosts:
         - argo-cd.{{ $.Values.domain }}
-      secretName: argocd-secret
+      secretName: argocd-server-ing-tls
   rules:
     - host: argo-cd.{{ $.Values.domain }}
       http:

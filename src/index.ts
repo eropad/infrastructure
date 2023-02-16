@@ -6,18 +6,9 @@ const config = new pulumi.Config();
 const doConfig = new pulumi.Config('digitalocean');
 const minNodeCount = config.getNumber('minNodeCount') ?? 1;
 const maxNodeCount = config.getNumber('maxNodeCount') ?? 5;
-const region = config.getSecret('region') ?? 'region';
+const region = config.getSecret('region') ?? 'nyc3';
+const ageKeys = config.getSecret('ageKeys') ?? 'ageKeys';
 const doCreds = doConfig.getSecret('token') ?? 'digitalocean:token';
-const githubUsername = config.getSecret('githubUsername') ?? 'githubUsername';
-const githubPassword = config.getSecret('githubPassword') ?? 'githubPassword';
-const argocdAdminPasswordBcryptHash = config.getSecret('argocdAdminPasswordBcryptHash') ?? 'argocdAdminPasswordBcryptHash';
-const domain = config.getSecret('domain') ?? 'domain';
-const repoUrl = config.getSecret('repoUrl') ?? 'repoUrl';
-const mailgunAuthPass = config.getSecret('mailgunAuthPass') ?? 'mailgunAuthPass';
-const doAccessKeyId = config.getSecret('doAccessKeyId') ?? 'doAccessKeyId';
-const doSecretAccessKey = config.getSecret('doSecretAccessKey') ?? 'doSecretAccessKey';
-const doBucket = config.getSecret('doBucket') ?? 'doBucket';
-const s3Endpoint = config.getSecret('s3Endpoint') ?? 's3Endpoint';
 
 const cluster = new digitalocean.KubernetesCluster('do-cluster', {
 	region,
@@ -55,18 +46,9 @@ const chartNamespace = new kubernetes.core.v1.Namespace(
 );
 
 const chartValues = {
-	githubUsername,
-	githubPassword,
-	argocdAdminPasswordBcryptHash,
-	doCreds,
-	domain,
-	repoUrl,
-	mailgunAuthPass,
-	doAccessKeyId,
-	doSecretAccessKey,
-	doBucket,
-	s3Endpoint,
+	ageKeys,
 	region,
+	doCreds,
 };
 
 Reflect.construct(kubernetes.helm.v3.Chart, [

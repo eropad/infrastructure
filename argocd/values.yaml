@@ -2,15 +2,19 @@ argo-cd:
   configs:
     secret:
       createSecret: false
-repoUrl: repoUrl
-domain: domain
-githubUsername: githubUsername
-githubPassword: githubPassword
-argocdAdminPasswordBcryptHash: argocdAdminPasswordBcryptHash
-doCreds: doCreds
-mailgunAuthPass: mailgunAuthPass
-doAccessKeyId: doAccessKeyId
-doSecretAccessKey: doSecretAccessKey
-doBucket: doBucket
-s3Endpoint: s3Endpoint
+sops-secrets-operator:
+  secretsAsFiles:
+    - name: sops-age-key
+      secretName: sops-age-key-file
+      mountPath: /age-sops
+  extraEnv:
+    - name: SOPS_AGE_KEY_FILE
+      value: /age-sops/keys.txt
+repoUrl: https://github.com/eropad/gitops.git
+domain: lovelustpassion.live
+githubUsername: alias-rahil
+doBucket: eropad-lovelustpassion
+s3Endpoint: digitaloceanspaces.com
 region: region
+doCreds: doCreds
+ageKeys: ageKeys

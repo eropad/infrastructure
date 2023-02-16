@@ -2,8 +2,8 @@ dependencies:
 - name: argo-cd
   repository: https://argoproj.github.io/argo-helm
   version: 5.19.12
-- name: reflector
-  repository: https://emberstack.github.io/helm-charts
-  version: 6.1.47
-digest: sha256:42f77ff7a1af9d3e0dd61a4bfb47e242a44fa8f5d4dfca31635925cf426c478b
-generated: "2023-02-01T23:17:43.873969+05:30"
+- name: sops-secrets-operator
+  repository: https://isindir.github.io/sops-secrets-operator
+  version: 0.14.0
+digest: sha256:9121f93f40956aa44b07f97e0362dba8d084a5f5a047d10767316152172fca26
+generated: "2023-02-16T22:41:31.005374+05:30"

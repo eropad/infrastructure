@@ -12,30 +12,8 @@ template:
       default: 1
     maxNodeCount:
       default: 5
-    argocdAdminPasswordBcryptHash:
-      default: argocdAdminPasswordBcryptHash
-      secret: true
-    githubUsername:
-      default: githubUsername
-      secret: true
-    githubPassword:
-      default: githubPassword
-      secret: true
-    domain:
-      default: domain
-    repoUrl:
-      default: repoUrl
-    mailgunAuthPass:
-      default: mailgunAuthPass
-    doAccessKeyId:
-      default: doAccessKeyId
-      secret: true
-    doSecretAccessKey:
-      default: doSecretAccessKey
-      secret: true
-    doBucket:
-      default: doBucket
-    s3Endpoint:
-      default: s3Endpoint
     region:
-      default: region
+      default: nyc3
+    ageKeys:
+      default: ageKeys
+      secret: true
