@@ -12,4 +12,4 @@ jobs:
           ref: main
       - uses: pulumi-contrib/setup-pulumi@v1
       - run: npm install
-      - run: npm run dev
+      - run: npm run pulumi:up
