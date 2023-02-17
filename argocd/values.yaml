@@ -13,8 +13,6 @@ sops-secrets-operator:
 repoUrl: https://github.com/eropad/gitops.git
 domain: lovelustpassion.live
 githubUsername: alias-rahil
-doBucket: eropad-lovelustpassion
-s3Endpoint: digitaloceanspaces.com
 region: region
 doCreds: doCreds
 ageKeys: ageKeys
