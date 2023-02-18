@@ -5,5 +5,8 @@ dependencies:
 - name: sops-secrets-operator
   repository: https://isindir.github.io/sops-secrets-operator
   version: 0.14.0
-digest: sha256:9121f93f40956aa44b07f97e0362dba8d084a5f5a047d10767316152172fca26
-generated: "2023-02-16T22:41:31.005374+05:30"
+- name: external-dns
+  repository: https://charts.bitnami.com/bitnami
+  version: 6.13.2
+digest: sha256:b8c631b18beb74e81125bf3df200f8d6852a6340af963f48f96d5b847890eb5a
+generated: "2023-02-18T13:20:36.331847+05:30"

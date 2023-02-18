@@ -10,6 +10,10 @@ sops-secrets-operator:
   extraEnv:
     - name: SOPS_AGE_KEY_FILE
       value: /age-sops/keys.txt
+external-dns:
+  provider: digitalocean
+  digitalocean:
+    secretName: do-creds
 repoUrl: https://github.com/eropad/gitops.git
 domain: lovelustpassion.live
 githubUsername: alias-rahil
