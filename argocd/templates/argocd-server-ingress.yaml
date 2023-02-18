@@ -5,6 +5,7 @@ metadata:
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-prod
     external-dns.alpha.kubernetes.io/ingress-hostname-source: defined-hosts-only
+    ingress.kubernetes.io/force-ssl-redirect: "true"
 spec:
   tls:
     - hosts:
