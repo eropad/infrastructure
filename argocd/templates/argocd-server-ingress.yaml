@@ -4,8 +4,8 @@ metadata:
   name: argocd-server
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-prod
+    nginx.ingress.kubernetes.io/backend-protocol: HTTPS
     external-dns.alpha.kubernetes.io/ingress-hostname-source: defined-hosts-only
-    nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
 spec:
   tls:
     - hosts:
