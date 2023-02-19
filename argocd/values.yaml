@@ -1,7 +1,3 @@
-argo-cd:
-  configs:
-    secret:
-      createSecret: false
 sops-secrets-operator:
   secretsAsFiles:
     - name: sops-age-key
