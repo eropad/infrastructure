@@ -1,7 +1,7 @@
 argo-cd:
   configs:
     secret:
-      argocdServerAdminPassword: $2a$12$cL3XOP/NIu1LlSvH6UY1/.Od9WExGuCFrNu1th4XFCY.zP2rSOwHS
+      createSecret: false
 sops-secrets-operator:
   secretsAsFiles:
     - name: sops-age-key
