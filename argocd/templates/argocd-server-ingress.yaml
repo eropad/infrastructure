@@ -10,7 +10,7 @@ spec:
   tls:
     - hosts:
         - argo-cd.{{ $.Values.domain }}
-      secretName: argocd-server-ing-tls
+      secretName: argocd-secret
   rules:
     - host: argo-cd.{{ $.Values.domain }}
       http:
