@@ -15,7 +15,7 @@ const cluster = new digitalocean.KubernetesCluster('do-cluster', {
 	version: '1.25.4-do.0',
 	nodePool: {
 		name: 'default',
-		size: digitalocean.DropletSlug.DropletS1VCPU2GB,
+		size: digitalocean.DropletSlug.DropletS2VCPU2GB,
 		autoScale: true,
 		minNodes: minNodeCount,
 		maxNodes: maxNodeCount,
