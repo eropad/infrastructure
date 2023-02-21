@@ -1,7 +1,7 @@
 argo-cd:
-  params:
-    server.insecure: true
   configs:
+    params:
+      server.insecure: true
     secret:
       createSecret: false
 sops-secrets-operator:
