@@ -1,3 +1,4 @@
+import {join} from 'node:path';
 import * as digitalocean from '@pulumi/digitalocean';
 import * as kubernetes from '@pulumi/kubernetes';
 import * as pulumi from '@pulumi/pulumi';
@@ -55,7 +56,7 @@ Reflect.construct(kubernetes.helm.v3.Chart, [
 	app,
 	{
 		namespace: chartNamespace.metadata.name,
-		path: app,
+		path: join('..', app),
 		values: chartValues,
 	},
 	{
