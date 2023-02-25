@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "private": true,
-  "main": "src/index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "pulumi:up": "pulumi up -s dev -y",
@@ -32,6 +31,7 @@
   "dependencies": {
     "@pulumi/digitalocean": "^4.16.0",
     "@pulumi/kubernetes": "^3.23.1",
-    "@pulumi/pulumi": "^3.53.1"
+    "@pulumi/pulumi": "^3.53.1",
+    "pulumi": "^0.0.1"
   }
 }

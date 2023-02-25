@@ -1,5 +1,6 @@
 name: infrastructure
 runtime: nodejs
+main: src/index.ts
 options:
   refresh: always
 config:
